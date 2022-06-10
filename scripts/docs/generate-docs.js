@@ -1,5 +1,5 @@
 const path = require('path');
-const babel = require('babel-core');
+const babel = require('@babel/core');
 const fs = require('fs-extra');
 const cheerio = require('cheerio');
 const _ = require('lodash');
@@ -263,9 +263,9 @@ function transformHTML(code, separate = true) {
                 sourceMaps: false,
                 babelrc: false,
                 presets: [
-                    require.resolve('babel-preset-react'),
-                    require.resolve('babel-preset-env'),
-                    require.resolve('babel-preset-stage-0'),
+                    require.resolve('@babel/preset-react'),
+                    require.resolve('@babel/preset-env'),
+                    require.resolve('@babel/preset-stage-0'),
                 ],
             }).code
         }})()</script>`;
@@ -275,9 +275,9 @@ function transformHTML(code, separate = true) {
             sourceMaps: false,
             babelrc: false,
             presets: [
-                require.resolve('babel-preset-react'),
-                require.resolve('babel-preset-env'),
-                require.resolve('babel-preset-stage-0'),
+                require.resolve('@babel/preset-react'),
+                require.resolve('@babel/preset-env'),
+                require.resolve('@babel/preset-stage-0'),
             ],
         }).code
     }</script>`;

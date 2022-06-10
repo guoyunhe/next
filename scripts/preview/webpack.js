@@ -149,18 +149,18 @@ function getWebpackPreset(context, options) {
 
     const preset = {
         presets: [
-            require('babel-preset-react'),
-            [require('babel-preset-env'), { modules: options.modules, loose: true }],
-            require('babel-preset-stage-0'),
+            require('@babel/preset-react'),
+            [require('@babel/preset-env'), { modules: options.modules, loose: true }],
+            require('@babel/preset-stage-0'),
         ],
         plugins: [
             require('babel-plugin-transform-react-es6-displayname'),
-            require('babel-plugin-transform-decorators-legacy').default,
+            [require('@babel/plugin-proposal-decorators'), { "legacy": true }],
         ],
     };
     if (options.runtime) {
         preset.plugins.unshift([
-            require('babel-plugin-transform-runtime'),
+            require('@babel/plugin-transform-runtime'),
             {
                 polyfill: false,
                 regenerator: false,
